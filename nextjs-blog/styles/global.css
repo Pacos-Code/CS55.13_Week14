@@ -1,0 +1,40 @@
+/* Global CSS styles that will be applied to all pages in the application */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  line-height: 1.6;
+  font-size: 30px;
+  background-color: #abe6fd;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+ 
+a:hover {
+  text-decoration: underline;
+  color: #00775d;
+}
+ 
+img {
+  max-width: 100%;
+  display: block;
+}
