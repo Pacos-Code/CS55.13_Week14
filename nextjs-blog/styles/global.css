@@ -4,20 +4,16 @@ body {
   padding: 0;
   margin: 0;
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
+    'Newsreader',
+    'Germania One',
+    'Bevan',
     sans-serif;
   line-height: 1.6;
-  font-size: 30px;
-  background-color: #abe6fd;
+  font-size: 25px;
+  background-color: #0e29a1;
+}
+main {
+  background-color: #ffffff;
 }
  
 * {

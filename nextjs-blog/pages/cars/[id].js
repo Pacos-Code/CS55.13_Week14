@@ -1,12 +1,12 @@
 // Import the Layout component to wrap the page content
-import Layout from '../../components/layout';
-// Import the getAllPostIds and getPostData helpers for dynamic routes and post content
-import { getAllIds, getData } from '../../lib/data.js';
+import Layout from '../../components/layout.js';
+// Import the getAllIds and getData helpers for dynamic routes and car content
+import { getAllIds, getData } from '../../lib/cars.js';
 import Head from 'next/head';
-import Date from '../../components/date';
+import Date from '../../components/date.js';
 import utilStyles from '../../styles/utils.module.css';
 
- // Define the Post component that will be rendered on the post page
+ // Define the Post component that will be rendered on the car detail page
  export default function Post({ postData }) {
     return (
       <Layout>
@@ -18,12 +18,16 @@ import utilStyles from '../../styles/utils.module.css';
           <div className={utilStyles.lightText}>
             <div className={utilStyles.dateBG}><Date dateString={postData.date} /></div>
           </div>
-          <p>Car: {postData.make} {postData.model}</p>
+          <div className={utilStyles.postData}>
+            <p className={utilStyles.headingLg}>{postData.year} {postData.make} {postData.model}</p>
+            <p className={utilStyles.headingMd}>Owned: {postData.owned} years</p>
+            <p>{postData.review}</p>
+          </div>
         </article>
       </Layout>
     );
   }
-// Define getStaticPaths to prerender dynamic routes for all post IDs at build time
+// Define getStaticPaths to prerender dynamic routes for all car IDs at build time
 export async function getStaticPaths() {
     const paths = await getAllIds();
     return {
@@ -34,12 +38,13 @@ export async function getStaticPaths() {
 
 
   export async function getStaticProps({ params }) {
-    // Fetch the post data for the given ID at build time
+    // Fetch the car data for the given ID at build time (or revalidate)
     const postData = await getData(params.id);
    
     return {
       props: {
         postData,
       },
+      revalidate: 60 // Revalidate every 60 seconds
     };
   }

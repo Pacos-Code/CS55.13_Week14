@@ -9,14 +9,21 @@
  
 .headingXl {
   font-size: 2rem;
+  font-family: "Germania One", sans-serif;
   line-height: 1.3;
   font-weight: 800;
   letter-spacing: -0.05rem;
-  margin: 1rem 0;
-  color: blueviolet;
+  margin: .5rem 0;
+  color: #0e29a1;
+  width: 100%;
+  text-align: center;
 }
  
 .headingLg {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: 688;
+  font-style: normal;
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 1rem 0;
@@ -55,4 +62,11 @@
 .dateBG {
   background-color: black;
   color:rgb(38, 226, 0);
+}
+.formatList {
+  padding: 0 2rem;
+}
+.postData {
+  width: 85%;
+  margin: 0 auto;
 }

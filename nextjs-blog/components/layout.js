@@ -8,18 +8,22 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 // Import Next.js Link component for client-side navigation between pages
 import Link from 'next/link';
+
 // Define the name of the site and the title of the site
 const name = 'Francisco';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Headless CMS-Powered App';
  
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Germania+One&family=Newsreader:opsz,wght@6..72,688&display=swap" rel="stylesheet"/>
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="A headless CMS-powered app blog about things I have owned"
         />
         <meta
           property="og:image"
@@ -41,7 +45,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
           </>
         ) : (
           <>
@@ -57,7 +61,7 @@ export default function Layout({ children, home }) {
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/" className={utilStyles.colorInherit}>
-                {name}
+                {siteTitle}
               </Link>
             </h2>
           </>
